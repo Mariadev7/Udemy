@@ -32,26 +32,36 @@
 
 //Love Calculator<------------
 
-let person1 = prompt("What is your name?");
-let person2 = prompt("Tell me the name of the person you love")
+// let person1 = prompt("What is your name?");
+// let person2 = prompt("Tell me the name of the person you love")
 
 
-function calc() {
-    let n = Math.random();
-    n = n * 100;
-    n = Math.floor(n) + 1;
+// function calc() {
+//     let n = Math.random();
+//     n = n * 100;
+//     n = Math.floor(n) + 1;
 
-    function love() {
-        if (n <= 30) {
-            return alert(`You love each other ${n}%, you should break up`);
-        } else if (n >= 31 && n <= 70) {
-            return alert(`You love each other ${n}%, your love is ok`)
-        } else if (n >= 71) {
-            return alert(`You love each other ${n}%, your love is strong`)
-        }
-    } love()
+//     function love() {
+//         if (n <= 30) {
+//             return alert(`You love each other ${n}%, you should break up`);
+//         } else if (n >= 31 && n <= 70) {
+//             return alert(`You love each other ${n}%, your love is ok`)
+//         } else if (n >= 71) {
+//             return alert(`You love each other ${n}%, your love is strong`)
+//         }
+//     } love()
 
-}
-calc()
+// }
+// calc()
 
+//Arrays<-------------------
 
+// let guestList = ["Maria", "Jim", "George", "Teo", "Irene", "Tereza"]
+
+// let name = prompt("Give me a name")
+
+// if (guestList.includes(name)){
+//     console.log('Yes,there is this name');
+// }else{
+//     console.log('No, there is not this name')
+// }
