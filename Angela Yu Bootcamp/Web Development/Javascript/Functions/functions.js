@@ -15,17 +15,43 @@
 //     let daysLeft = 365 * age2;
 //     let weeksLeft = 52 * age2;
 //     let monthsLeft = 12 * age2;
-    
+
 //     console.log(`You have ${daysLeft} days left, ${weeksLeft} weeks left and ${monthsLeft} untile 90 years old`);
-    
+
 // }
 // lifeInWeeks(age)
- 
+
 //Calculate BMI<-------------
 
-function calc(weight,height){
-    let bmi = weight / (height*2)
-    return Math.round(bmi);
+// function calc(weight,height){
+//     let bmi = weight / (height*2)
+//     return Math.round(bmi);
+// }
+// let total = calc(65,1.70)
+// console.log(total);
+
+//Love Calculator<------------
+
+let person1 = prompt("What is your name?");
+let person2 = prompt("Tell me the name of the person you love")
+
+
+function calc() {
+    let n = Math.random();
+    n = n * 100;
+    n = Math.floor(n) + 1;
+
+    function love() {
+        if (n <= 30) {
+            return alert(`You love each other ${n}%, you should break up`);
+        } else if (n >= 31 && n <= 70) {
+            return alert(`You love each other ${n}%, your love is ok`)
+        } else if (n >= 71) {
+            return alert(`You love each other ${n}%, your love is strong`)
+        }
+    } love()
+
 }
-let total = calc(65,1.70)
-console.log(total);
+calc()
+
+
