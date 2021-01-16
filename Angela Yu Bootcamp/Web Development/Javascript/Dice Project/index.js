@@ -24,7 +24,7 @@ function dice1() {
 function dice2() {
     let randomImages2 = new Array("images/dice1.png", "images/dice2.png", "images/dice3.png", "images/dice4.png", "images/dice5.png", "images/dice6.png");
 
-    let randomNumber1 = Math.floor(Math.random() * randomImages2.length);
+    let randomNumber1 =Math.floor(Math.random() * randomImages2.length);
 
 
     document.getElementById('img2').setAttribute('src', randomImages2[randomNumber1]);
@@ -45,6 +45,3 @@ function result(dice1,dice2) {
 
 result(dice1(), dice2())
 
-// let x = document.getElementById("title").innerHTML = "Draw"
-
-// console.log(x);
