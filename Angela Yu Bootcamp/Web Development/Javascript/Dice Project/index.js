@@ -35,11 +35,11 @@ function dice2() {
 
 function result(dice1,dice2) {
     if (dice1 > dice2) {
-        document.getElementById("title").innerHTML = "Player 1 wins";
+        document.getElementById("title").innerHTML = "🥇 Player 1 wins ";
     } else if (dice1 < dice2) {
-        document.getElementById("title").innerHTML = "Player 2 wins";;
+        document.getElementById("title").innerHTML = "Player 2 wins 🥈";;
     } else {
-        document.getElementById("title").innerHTML = "Draw!!";
+        document.getElementById("title").innerHTML = "Draw!! 🙌";
     }
 }
 
