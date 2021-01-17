@@ -43,5 +43,7 @@ function result(dice1,dice2) {
     }
 }
 
-result(dice1(), dice2())
+function roll(){
+    result(dice1(),dice2())
+}
 
