@@ -74,6 +74,7 @@ btnHold.addEventListener('click', function () {
             btnHold.disabled = true;
             diceEl.classList.add('hidden');
 
+
         }
     } else {
         scores[1] += currentScore;
@@ -89,6 +90,7 @@ btnHold.addEventListener('click', function () {
             btnRoll.disabled = true; //Disable the buttons roll and hold
             btnHold.disabled = true;
             diceEl.classList.add('hidden');
+
         }
 
     }
