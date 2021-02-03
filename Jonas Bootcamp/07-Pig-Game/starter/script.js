@@ -23,12 +23,21 @@ const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 
+//Function for players active 
+const nextPlayer = function () {
+    player0El.classList.toggle('player--active');
+    player1El.classList.toggle('player--active');
+}
+
+const prevPlayer = function () {
+    player1El.classList.toggle('player--active');
+    player0El.classList.toggle('player--active');
+}
 
 //Rolling dice functionality
 btnRoll.addEventListener('click', function () {
     //1.Generating a random dice roll
     let diceRoll = Math.floor(Math.random() * 6) + 1;
-    console.log(diceRoll);
     //2.Display dice
     diceEl.classList.remove('hidden');
     diceEl.src = `images/dice-${diceRoll}.png`
@@ -45,8 +54,7 @@ btnRoll.addEventListener('click', function () {
         current0El.textContent = 0;
         currentScore = 0
         activePlayer = activePlayer === 0 ? 1 : 0;
-        player0El.classList.toggle('player--active');
-        player1El.classList.toggle('player--active');
+        nextPlayer()
     }
 })
 //Hold button functonality
@@ -57,15 +65,14 @@ btnHold.addEventListener('click', function () {
         current0El.textContent = 0
         score0El.textContent = scores[0];
         activePlayer = activePlayer === 0 ? 1 : 0;
-        player0El.classList.toggle('player--active');
-        player1El.classList.toggle('player--active');
-
+        nextPlayer()
         if (scores[0] >= 100) { //Determines the winner if 100 points are scored
             newName0El.textContent = '🥇You are the Winner!!!!'
             currentScore = 0;
             current0El.textContent = 0;
             btnRoll.disabled = true; //Disable the buttons roll and hold
             btnHold.disabled = true;
+            diceEl.classList.add('hidden');
 
         }
     } else {
@@ -74,14 +81,14 @@ btnHold.addEventListener('click', function () {
         current1El.textContent = 0
         score1El.textContent = scores[1];
         activePlayer = activePlayer === 0 ? 1 : 0;
-        player1El.classList.toggle('player--active');
-        player0El.classList.toggle('player--active');
+        prevPlayer();
         if (scores[1] >= 100) {
             newName1El.textContent = '🥈You are the Winner!!!!'
             currentScore = 0;
             current1El.textContent = 0;
             btnRoll.disabled = true; //Disable the buttons roll and hold
             btnHold.disabled = true;
+            diceEl.classList.add('hidden');
         }
 
     }
