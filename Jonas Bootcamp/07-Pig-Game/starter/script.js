@@ -11,6 +11,8 @@ const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const newName0El = document.getElementById('name--0');
+const newName1El = document.getElementById('name--1');
 
 //Starting conditions
 score0El.textContent = 0;
@@ -45,10 +47,47 @@ btnRoll.addEventListener('click', function () {
         activePlayer = activePlayer === 0 ? 1 : 0;
         player0El.classList.toggle('player--active');
         player1El.classList.toggle('player--active');
+    }
+})
+//Hold button functonality
+btnHold.addEventListener('click', function () {
+    if (activePlayer === 0) {
+        scores[0] += currentScore;
+        currentScore = 0
+        current0El.textContent = 0
+        score0El.textContent = scores[0];
+        activePlayer = activePlayer === 0 ? 1 : 0;
+        player0El.classList.toggle('player--active');
+        player1El.classList.toggle('player--active');
+
+        if (scores[0] >= 100) { //Determines the winner if 100 points are scored
+            newName0El.textContent = '🥇You are the Winner!!!!'
+            currentScore = 0;
+            current0El.textContent = 0;
+            btnRoll.disabled = true; //Disable the buttons roll and hold
+            btnHold.disabled = true;
+
+        }
+    } else {
+        scores[1] += currentScore;
+        currentScore = 0
+        current1El.textContent = 0
+        score1El.textContent = scores[1];
+        activePlayer = activePlayer === 0 ? 1 : 0;
+        player1El.classList.toggle('player--active');
+        player0El.classList.toggle('player--active');
+        if (scores[1] >= 100) {
+            newName1El.textContent = '🥈You are the Winner!!!!'
+            currentScore = 0;
+            current1El.textContent = 0;
+            btnRoll.disabled = true; //Disable the buttons roll and hold
+            btnHold.disabled = true;
+        }
 
     }
-
 })
 
-
-
+//New game button functionality
+btnNew.addEventListener('click', function () {
+    location.reload();
+})
