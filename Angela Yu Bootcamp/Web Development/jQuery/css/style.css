@@ -8,3 +8,7 @@
 .margin-50{
     margin: 50px;
 }
+h1{
+    background-image: url('/mariapor.jpg');
+    width: 100%;
+}
